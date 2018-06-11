@@ -145,7 +145,7 @@ def analyzeDAPI():
 	if not lis_dic:
 		sys.exit('Did you check the right box?')
 
-	# Calculate area of channel #1 (Calculation requires that area is chosen as measured value)
+	# Calculate number of particles in channel #1 (Calculation requires that DAPI is chosen as measured value)
 	for i in lis_dic:
 		for p in data[counter]:
 			if '_'+channel1+'_' in p:
