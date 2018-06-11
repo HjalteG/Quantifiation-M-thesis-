@@ -122,23 +122,10 @@ def analyzeTUB():
 				
 			
 		counter += 1
-	#IJ.renameResults(channel1)
 
 	# Reset counter
 	counter = 0
-	
-	# Calculate area of channel #2
-	#for i in lis_dic:
-	#	for p in data[counter]:
-	#		if '_'+channel2+'_' in p:
-	#			imp2 = IJ.openImage(i['path']+'/'+p)
-	#			IJ.setThreshold(imp2,lowth2,255)
-	#			IJ.run(imp2, "Restore Selection","")
-	#			IJ.run(imp2, "Analyze Particles...", "summarize");
-	#	counter += 1
-	#rt = RT.getResultsTable()
-	#area = rt.getColumn(rt.getColumnIndex('Area'))
-	#print area
+
 	IJ.renameResults(channel2)
 
 
@@ -212,7 +199,7 @@ for root, dirs, files in os.walk(directory, topdown=True):
 		data, sub = getfilesNoDIRS()
 		break
 
-#If the chosen directory does not contain ORG files; outpus error
+#If the chosen directory does not contain ORG files; output error
 if len(data[0]) != 2:
 	sys.exit("Channels should be written as ex 'c1'")
 
@@ -221,7 +208,3 @@ if gd.getNextChoice() == "Tubulin area":
 	analyzeTUB()
 else:
 	analyzeDAPI()
-
-
-#rt = RT.getResultsTable()
-#print rt.getColumn(1)
